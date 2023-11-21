@@ -35,6 +35,10 @@ int _printf(const char *format, ...)
 	char c;
 	char *s;
 	counter = flag = len = 0;
+	if (!format)
+	{
+		return (0);
+	}
 	va_start(ap, format);
 	while (format[counter])
 	{
@@ -67,7 +71,7 @@ int _printf(const char *format, ...)
 				break;
 			case '%':
 				_putchar('%');
-				len = len - 1;
+				len = len + 1;
 				break;
 			default:
 				_putchar('%');
@@ -85,8 +89,13 @@ int _printf(const char *format, ...)
 			_putchar(format[counter]);
 			counter = counter + 1;
 			flag = 0;
+			len = len + 1;
 		}
 	}
 	va_end(ap);
+	if (!len)
+	{
+		len = strlen(format);
+	}
 	return (len);
 }

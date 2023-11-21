@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-<<<<<<< HEAD
 
 /**
  * struct what_format - Structure to match specifier with correspond func
@@ -14,17 +13,17 @@
  *
  */
 
-typedef struct what_format
-{
-	const char *formatz;
-	int (*f)(va_list args);
-} what_format;
+// typedef struct what_format
+// {
+// 	const char *formatz;
+// 	int (*f)(va_list args);
+// } what_format;
 
-int w_char(va_list args);
-int  w_str(va_list args);
-int w_percent(va_list args);
-int w_double(va_list args);
-int w_integer(va_list args)
+// int w_char(va_list args);
+// int  w_str(va_list args);
+// int w_percent(va_list args);
+// int w_double(va_list args);
+// int w_integer(va_list args);
 int _printf(const char *format, ...);
 int _putchar(char c);
 
