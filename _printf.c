@@ -53,8 +53,16 @@ int _printf(const char *format, ...)
 			{
 			case 's':
 				s = va_arg(ap, char *);
-				write(1, s, strlen(s));
-;				len = len + strlen(s);
+				if (s)
+				{
+					write(1, s, strlen(s));
+					len = len + strlen(s);
+				}
+				else
+				{
+					write(1, "(null)", 6);
+					len = len + 6;
+				}
 				break;
 			case 'c':
 				c = va_arg(ap, int);
