@@ -5,5 +5,6 @@
 #include <string.h>
 #include <stdlib.h> //this is not working//
 int _printf(const char *format, ...);
+int _putchar(char c);
 
 #endif
