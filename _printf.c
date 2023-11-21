@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 	counter = flag = len = 0;
 	if (!format)
 	{
-		return (0);
+		return (-1);
 	}
 	va_start(ap, format);
 	while (format[counter])
@@ -102,9 +102,6 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(ap);
-	if (!len)
-	{
-		len = strlen(format);
-	}
+	_putchar('D');
 	return (len);
 }
