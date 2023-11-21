@@ -48,6 +48,10 @@ int _printf(const char *format, ...)
 		}
 		else if (format[counter] == '%')
 		{
+			if (strlen(format) == 1)
+			{
+				return (0);
+			}
 			counter = counter + 1;
 			switch (format[counter])
 			{
