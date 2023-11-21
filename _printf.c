@@ -50,7 +50,7 @@ int _printf(const char *format, ...)
 		{
 			if (strlen(format) == 1)
 			{
-				return (0);
+				return (-1);
 			}
 			counter = counter + 1;
 			switch (format[counter])
