@@ -5,7 +5,6 @@
 /**
  * w_double - calls w_double
  * @i: int
-
  * Return: void
  */
 
@@ -34,6 +33,7 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int counter, flag, d, len;
 	char c;
+	char *s;
 	counter = flag = len = 0;
 	va_start(ap, format);
 	while (format[counter])
@@ -48,11 +48,14 @@ int _printf(const char *format, ...)
 			switch (format[counter])
 			{
 			case 's':
-				write(1, va_arg(ap, char *), strlen(va_arg(ap, char *)));
+				s = va_arg(ap, char *);
+				write(1, s, strlen(s));
+;				len = len + strlen(s);
 				break;
 			case 'c':
 				c = va_arg(ap, int);
 				_putchar(c);
+				len = len + 1;
 				break;
 			case 'd':
 				d = va_arg(ap, int);
@@ -66,12 +69,14 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				len = len - 1;
 				break;
+			default:
+				_putchar('%');
+				_putchar(format[counter]);
 			}
 			counter = counter + 1;
 		}
 		else if (format[counter] == '\\')
 		{
-			printf("FLAG");
 			flag = flag + 1;
 			break;
 		}
@@ -83,6 +88,5 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(ap);
-	len = len + strlen(format);
 	return (len);
 }
