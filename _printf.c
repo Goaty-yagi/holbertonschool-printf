@@ -8,18 +8,20 @@
  * Return: void
  */
 
-void w_double(int i)
+void w_double(int i, int *p)
 {
 	if (i < 0)
 	{
 		_putchar('-');
+		*p = *p + 1;
 		i = -i;
 	}
 	if (i / 10)
 	{
-		w_double(i / 10);
+		w_double(i / 10, p);
 	}
 	_putchar(i % 10 + 48);
+	*p = *p + 1;
 }
 
 /**
@@ -34,6 +36,7 @@ int _printf(const char *format, ...)
 	int counter, flag, d, len;
 	char c;
 	char *s;
+	
 	counter = flag = len = 0;
 	if (!format)
 	{
@@ -75,11 +78,11 @@ int _printf(const char *format, ...)
 				break;
 			case 'd':
 				d = va_arg(ap, int);
-				w_double(d);
+				w_double(d, &len);
 				break;
 			case 'i':
 				d = va_arg(ap, int);
-				w_double(d);
+				w_double(d, &len);
 				break;
 			case '%':
 				_putchar('%');
