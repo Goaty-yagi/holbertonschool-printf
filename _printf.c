@@ -84,6 +84,7 @@ int _printf(const char *format, ...)
 			default:
 				_putchar('%');
 				_putchar(format[counter]);
+				len = len + 1;
 			}
 			counter = counter + 1;
 		}
