@@ -4,16 +4,15 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <unistd.h>
 
-/**
- * struct what_format - Structure to match specifier with correspond func
- *
- * @formatz: String to be printed
- * @f: Function pointer for which specifier to be used
- *
- */
-
-int _printf(const char *format, ...);
 int _putchar(char c);
+int _printf(const char *format, ...);
+void w_char(va_list ap, int *p);
+void w_double(int i, int *p);
+void w_integer(int i, int *p);
+void w_str(va_list ap, int *p);
+void format_function(const char *format, int counter, va_list ap, int *p);
+void int_to_string(int number, char *str);
 
 #endif
