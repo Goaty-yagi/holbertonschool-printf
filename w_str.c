@@ -1,5 +1,18 @@
-void w_str(char c, int *p)
+#include "main.h"
+#include <unistd.h>
+
+void w_str(va_list ap, int *p)
 {
-    (void)c;
-    (void)p;
+    char *s;
+    s = va_arg(ap, char *);
+    if (s)
+    {
+        write(1, s, strlen(s));
+        *p = *p + strlen(s);
+    }
+    else
+    {
+        write(1, "(null)", 6);
+        *p = *p + 6;
+    }
 }
