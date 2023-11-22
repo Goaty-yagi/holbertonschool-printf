@@ -19,7 +19,7 @@ typedef struct fm
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-void w_char(va_list ap, int *p);
+void w_char(int ap, int *p);
 void w_double(int i, int *p);
 void w_integer(int i, int *p);
 void w_percent(char c, int *p);

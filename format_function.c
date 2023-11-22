@@ -12,25 +12,6 @@
 
 int format_function(char op)
 {
-    fm_t fspecs[] = {
-        {'c', w_char},
-        {'s', w_str},
-        {'%', w_percent},
-        {'d', w_double},
-        {'i', w_integer},
-        {NULL, NULL}};
-
-    int i;
-
-    i = 0;
-
-    while (fspecs[i].f != NULL)
-    {
-        if (fspecs[i].op == op)
-        {
-            return (fspecs[i].f);
-        }
-        i = i + 1;
-    }
+    
     return (0);
 }
