@@ -3,7 +3,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-
+/**
+ * int_to_string - calls int_to_string
+ * @number: int
+ * @str: char pointer
+ * Return: void
+ */
 void int_to_string(int number, char *str)
 {
 	unsigned int posValue;
@@ -39,6 +44,7 @@ void int_to_string(int number, char *str)
 /**
  * w_double - calls w_double
  * @i: int
+ * @p: length
  * Return: void
  */
 
