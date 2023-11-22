@@ -9,6 +9,7 @@
 void w_str(va_list ap, int *p)
 {
 	char *s;
+	
 	s = va_arg(ap, char *);
 	if (s)
 	{

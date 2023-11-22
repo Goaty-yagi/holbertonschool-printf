@@ -16,6 +16,7 @@
 void format_function(const char *format, int counter, va_list ap, int *p)
 {
 	int d;
+	
 	switch (format[counter])
 	{
 	case 's':
