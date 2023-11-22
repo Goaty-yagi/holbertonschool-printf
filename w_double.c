@@ -48,6 +48,6 @@ void w_double(int i, int *p)
 	c = malloc(10);
 	int_to_string(i, c);
 	write(1, c, strlen(c));
-	free(c);
 	*p = *p + strlen(c);
+	free(c);
 }
