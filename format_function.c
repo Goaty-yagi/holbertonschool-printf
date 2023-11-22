@@ -12,6 +12,7 @@
 
 int format_function(char op)
 {
+    (void)op;
     
     return (0);
 }
