@@ -1,5 +1,10 @@
-void w_char(char c, int *p)
+#include "main.h"
+#include <unistd.h>
+
+void w_char(va_list ap, int *p)
 {
-    (void)c;
-    (void)p;
+    char c;
+    c = va_arg(ap, int);
+    _putchar(c);
+    *p = *p + 1;
 }

@@ -6,20 +6,25 @@
 #include <stdlib.h>
 
 /**
- * struct what_format - Structure to match specifier with correspond func
+ * struct op - Struct op
  *
- * @formatz: String to be printed
- * @f: Function pointer for which specifier to be used
- *
+ * @op: The operator
+ * @f: The function associated
  */
+typedef struct fm
+{
+	char *op;
+	int (*f)(char a, int *b);
+} fm_t;
 
-int _printf(const char *format, ...);
 int _putchar(char c);
-void w_char(char c, int *p);
+int _printf(const char *format, ...);
+void w_char(va_list ap, int *p);
 void w_double(int i, int *p);
 void w_integer(int i, int *p);
 void w_percent(char c, int *p);
 void w_str(char c, int *p);
-int format_function(void);
+int format_function(char op);
+void int_to_string(int number, char *str);
 
 #endif
