@@ -1,13 +1,71 @@
-.TH "MAN_3_PRINTF" 2  "2023-11-20" "Man Page" "Utility Commands"
+.\" Manpage for _printf.
+
+.TH ""MAN_3_PRINTF" "22 November 2023" "1.0" "Program Manual for _printf"
 
 .SH NAME
-MAN_3_PRINTF
+_printf - Prints an output according to a format
 
 .SH SYNOPSIS
+#include "main.h"
+.br
+#include <stdio.h>
+.br
+#include <stdlib.h>
+.br
+#include <stdarg.h>
+.br
+#include <unistd.h>
+.br
+
+int _printf(const char *format, ...)
+
 
 .SH DESCRIPTION
-Copy of printf function
+_printf is a simple recreation of the C standard library printf.
+
 
 .SH OPTIONS
+Format Specifiers:
+.IP %c
+To print a single character
+.IP %s
+To print a string of characters
+.IP %%
+To print a single percent sign
+.IP %i
+To print an integer
+.IP %d
+To print a decimal number
+
+.SH RETURN VALUES
+If successful, the number of characters printed is returned.
+.br
+If an output error is encountered, -1 is returned
+
+.SH EXAMPLES
+To print "Hello World" and a new line:
+.br
+
+#include "main.h"
+.br
+
+int main(void)
+.br
+{
+.br
+	char str;
+.br
+	str = "Hello World"
+.br
+	_printf("%s\n", str);
+.br
+	return (0);
+.br
+}
+.br
 
 .SH SEE ALSO
+man 3 printf
+
+.SH AUTHOR
+Written by Yichen Cao, Nobuhiro Funahashi
