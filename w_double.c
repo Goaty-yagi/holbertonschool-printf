@@ -14,6 +14,7 @@ void int_to_string(int number, char *str)
 	unsigned int posValue;
 	char temp;
 	int length, j, i;
+
 	if (number < 0)
 	{
 		posValue = -(unsigned int)number;
@@ -23,7 +24,7 @@ void int_to_string(int number, char *str)
 		posValue = (unsigned int)number;
 	}
 	i = 0;
-	do{
+	do {
 		str[i++] = posValue % 10 + '0';
 		posValue /= 10;
 	} while (posValue != 0);
@@ -50,7 +51,7 @@ void int_to_string(int number, char *str)
 void w_double(int i, int *p)
 {
 	char *c;
-	
+
 	c = malloc(10);
 
 	if (c)
