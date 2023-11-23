@@ -14,6 +14,8 @@ int w_binary(va_list ap, int *p)
 	if(n < 0)
 	{
 		n = -n;
+		write(1,"111111111111111111111",21);
+		*p = *p + 21;
 	}
 	if (n == 0)
 	{
