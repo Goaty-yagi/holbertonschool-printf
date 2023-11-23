@@ -11,6 +11,10 @@ int w_binary(va_list ap, int *p)
 	int binary_num[32], n, i;
 	i = 0;
 	n = va_arg(ap, int);
+	if(n < 0)
+	{
+		n = -n;
+	}
 	if (n == 0)
 	{
 		_putchar('0');
