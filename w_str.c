@@ -5,7 +5,7 @@
  * @p: length
  * Return: void
  */
-void w_str(va_list ap, int *p)
+int w_str(va_list ap, int *p)
 {
 	char *s;
 
@@ -20,4 +20,5 @@ void w_str(va_list ap, int *p)
 		write(1, "(null)", 6);
 		*p = *p + 6;
 	}
+	return (0);
 }

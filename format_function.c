@@ -6,7 +6,7 @@
  * @p: int pointer for length
  * Return: void
  */
-void format_function(char fs, va_list ap, int *p)
+int format_function(char fs, va_list ap, int *p)
 {
 	fs_t fspecs[] = {
 		{'c', w_char},
@@ -14,7 +14,7 @@ void format_function(char fs, va_list ap, int *p)
 		{'d', w_double},
 		{'i', w_double},
 	};
-	int i, len, executed;
+	int i, len;
 
 	i = 0;
 	len = sizeof(fspecs) / sizeof(fspecs[0]);
@@ -24,19 +24,17 @@ void format_function(char fs, va_list ap, int *p)
 		{
 			_putchar('%');
 			*p = *p + 1;
-			executed = executed + 1;
+			return (0);
 		}
 		else if (fspecs[i].fs == fs)
 		{
 			fspecs[i].f(ap, p);
-			executed = executed + 1;
+			return (0);
 		}
 		i = i + 1;
 	}
-	if (!executed)
-	{
-		_putchar('%');
-		_putchar(fs);
-		*p = *p + 2;
-	}
+	_putchar('%');
+	_putchar(fs);
+	*p = *p + 2;
+	return (0);
 }

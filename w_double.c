@@ -43,17 +43,23 @@ void int_to_string(int number, char *str)
 }
 /**
  * w_double - calls w_double
- * @i: int
+ * @ap: va_list
  * @p: length
  * Return: void
  */
 
-void w_double(va_list ap, int *p)
+int w_double(va_list ap, int *p)
 {
 	char *c;
 	int i;
 
 	i = va_arg(ap, int);
+	if (i == 0)
+	{
+		_putchar('0');
+		*p = *p + 1;
+		return (0);
+	}
 	c = malloc(sizeof(int));
 
 	if (c)
@@ -63,4 +69,5 @@ void w_double(va_list ap, int *p)
 		*p = *p + strlen(c);
 	}
 	free(c);
+	return (0);
 }
