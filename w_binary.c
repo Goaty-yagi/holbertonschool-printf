@@ -11,12 +11,21 @@ int w_binary(va_list ap, int *p)
 	int binary_num[32], n, i;
 	i = 0;
 	n = va_arg(ap, int);
-	while (n > 0)
+	if (n == 0)
 	{
-		/* storing remainder in binary array */
-		binary_num[i] = n % 2;
-		n = n / 2;
-		i = i + 1;
+		_putchar('0');
+		*p = *p + 1;
+		return (0);
+	}
+	else
+	{
+		while (n > 0)
+		{
+			/* storing remainder in binary array */
+			binary_num[i] = n % 2;
+			n = n / 2;
+			i = i + 1;
+		}
 	}
 
 	/* printing binary array in reverse order */
