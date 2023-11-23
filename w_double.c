@@ -1,8 +1,4 @@
 #include "main.h"
-#include <limits.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
 /**
  * int_to_string - calls int_to_string
  * @number: int
@@ -11,34 +7,38 @@
  */
 void int_to_string(int number, char *str)
 {
-	unsigned int posValue;
+	unsigned int pos_val;
 	char temp;
 	int length, j, i;
 
 	if (number < 0)
 	{
-		posValue = -(unsigned int)number;
+		pos_val = -(unsigned int)number;
 	}
 	else
 	{
-		posValue = (unsigned int)number;
+		pos_val = (unsigned int)number;
 	}
-	i = 0;
-	do {
-		str[i++] = posValue % 10 + '0';
-		posValue /= 10;
-	} while (posValue != 0);
+	i = j = 0;
+	while (pos_val != 0)
+	{
+		str[i] = pos_val % 10 + '0';
+		pos_val /= 10;
+		i = i + 1;
+	}
 	if (number < 0)
 	{
-		str[i++] = '-';
+		str[i] = '-';
+		i = i + 1;
 	}
 	str[i] = '\0';
 	length = i;
-	for (j = 0; j < length / 2; j++)
+	while (j < length / 2)
 	{
 		temp = str[j];
 		str[j] = str[length - j - 1];
 		str[length - j - 1] = temp;
+		j = j + 1;
 	}
 }
 /**
@@ -48,11 +48,13 @@ void int_to_string(int number, char *str)
  * Return: void
  */
 
-void w_double(int i, int *p)
+void w_double(va_list ap, int *p)
 {
 	char *c;
+	int i;
 
-	c = malloc(10);
+	i = va_arg(ap, int);
+	c = malloc(sizeof(int));
 
 	if (c)
 	{

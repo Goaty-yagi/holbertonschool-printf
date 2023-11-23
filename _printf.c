@@ -25,15 +25,14 @@ int _printf(const char *format, ...)
 				return (-1);
 			}
 			counter = counter + 1;
-			format_function(format, counter, ap, &len);
-			counter = counter + 1;
+			format_function(format[counter], ap, &len);
 		}
 		else
 		{
 			_putchar(format[counter]);
-			counter = counter + 1;
 			len = len + 1;
 		}
+		counter = counter + 1;
 	}
 	va_end(ap);
 	return (len);

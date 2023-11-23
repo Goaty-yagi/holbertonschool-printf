@@ -1,5 +1,4 @@
 #include "main.h"
-#include <unistd.h>
 /**
  * w_char - calls w_char
  * @ap: va_list
