@@ -13,6 +13,7 @@ int format_function(char fs, va_list ap, int *p)
 		{'s', w_str},
 		{'d', w_double},
 		{'i', w_double},
+		{'b', w_binary}
 	};
 	int i, len;
 

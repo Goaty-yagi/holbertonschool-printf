@@ -23,6 +23,7 @@ int _printf(const char *format, ...);
 int w_char(va_list ap, int *p);
 int w_double(va_list ap, int *p);
 int w_str(va_list ap, int *p);
+int w_binary(va_list ap, int *p);
 int format_function(char fs, va_list ap, int *p);
 void int_to_string(int number, char *str);
 
