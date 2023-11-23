@@ -1,4 +1,5 @@
 #include "main.h"
+#include <math.h>
 /**
  * w_binary - calls w_binary
  * @ap: va_list
@@ -8,15 +9,11 @@
 
 int w_binary(va_list ap, int *p)
 {
-	int binary_num[32], n, i;
+	int binary_num[32], i;
+	unsigned int n;
 	i = 0;
-	n = va_arg(ap, int);
-	if(n < 0)
-	{
-		n = -n;
-		write(1,"111111111111111111111",21);
-		*p = *p + 21;
-	}
+	n = va_arg(ap,unsigned int);
+
 	if (n == 0)
 	{
 		_putchar('0');
