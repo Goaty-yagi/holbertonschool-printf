@@ -2,8 +2,8 @@
 
 ## Description
 
-#### This project recreates the standard library **printf** function that prints out strings and returns the length of the strings according to the format specifier.
-
+This project recreates the standard library **printf** function that prints out strings and returns the length of the strings according to the format specifier.
+This `_printf` function has been tested on Ubuntu 20.04
 <br>
 
 ## Table of Contents
@@ -12,7 +12,7 @@
 - [Requirements](#Requirements)
 - [Installation](#Installation)
 - [Compile with Makefile](#Compile-with-Makefile)
-- [Man Page](#Man Page)
+- [ManPage](#Manpage)
 - [Example](#example)
 - [Flowchart](#Flowchart)
 - [Authors](#Authors)
@@ -40,7 +40,7 @@
 To install this function yourself you are going to be cloning our repository
 by using the command `git clone`.
 
-#### Compile with Makefile
+## Compile with Makefile
 
 Our repository contains a makefile, and with makefile it allows you to compile all of the our code to your own main.c with simple command `make`.
 
@@ -83,7 +83,7 @@ Below is a flowchart showing the ideation and implementation of how our function
 ## AUTHORS
 
 To contact the authors of this page and to review the \_printf code or submit pull requests, please visit:
-[Nobuhiro](https://github.com/Goaty-yagi)
-[Yichen Cao](https://github.com/yichehnc)
-[DanielColoradoL]
 
+- [Nobuhiro](https://github.com/Goaty-yagi)
+- [Yichen Cao](https://github.com/yichehnc)
+- DanielColoradoL
