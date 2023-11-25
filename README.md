@@ -1,9 +1,9 @@
-# holbertonschool-printf project
+# Holbertonschool printf project
 
 ## Description
 
 This project recreates the standard library **printf** function that prints out strings and returns the length of the strings according to the format specifier.
-This `_printf` function has been tested on Ubuntu 20.04
+This `_printf` function has been tested on Ubuntu 20.04.
 <br>
 
 ## Table of Contents
@@ -44,7 +44,7 @@ by using the command `git clone`.
 
 Our repository contains a makefile, and with makefile it allows you to compile all of the our code to your own main.c with simple command `make`.
 
-## Man Page
+## ManPage
 
 Call the manual to read how `_printf` works:
 
