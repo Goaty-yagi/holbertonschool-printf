@@ -1,45 +1,41 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdarg.h>
 #include "main.h"
-
 /**
  * format_function - calls format_function
- * @format: format
- * @counter: int
+ * @fs: format specifier
  * @ap: va_list
- * @p: int
- * Return: int
+ * @p: int pointer for length
+ * Return: void
  */
-
-void format_function(const char *format, int counter, va_list ap, int *p)
+int format_function(char fs, va_list ap, int *p)
 {
-	int d;
+	fs_t fspecs[] = {
+		{'c', w_char},
+		{'s', w_str},
+		{'d', w_double},
+		{'i', w_double},
+		{'b', w_binary}
+	};
+	int i, len;
 
-	switch (format[counter])
+	i = 0;
+	len = sizeof(fspecs) / sizeof(fspecs[0]);
+	while (i < len)
 	{
-	case 's':
-		w_str(ap, p);
-		break;
-	case 'c':
-		w_char(ap, p);
-		break;
-	case 'd':
-		d = va_arg(ap, int);
-		w_double(d, p);
-		break;
-	case 'i':
-		d = va_arg(ap, int);
-		w_double(d, p);
-		break;
-	case '%':
-		_putchar('%');
-		*p = *p + 1;
-		break;
-	default:
-		_putchar('%');
-		_putchar(format[counter]);
-		*p = *p + 2;
+		if (fs == '%')
+		{
+			_putchar('%');
+			*p = *p + 1;
+			return (0);
+		}
+		else if (fspecs[i].fs == fs)
+		{
+			fspecs[i].f(ap, p);
+			return (0);
+		}
+		i = i + 1;
 	}
+	_putchar('%');
+	_putchar(fs);
+	*p = *p + 2;
+	return (0);
 }

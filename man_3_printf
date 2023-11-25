@@ -1,6 +1,6 @@
 .\" Manpage for _printf.
 
-.TH ""MAN_3_PRINTF" "22 November 2023" "1.0" "Program Manual for _printf"
+.TH ""MAN_3_PRINTF" "22 November 2023" "1.0" "Program Manual for _printf""
 
 .SH NAME
 _printf - Prints an output according to a format

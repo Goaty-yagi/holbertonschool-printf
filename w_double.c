@@ -1,58 +1,24 @@
 #include "main.h"
-#include <limits.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-/**
- * int_to_string - calls int_to_string
- * @number: int
- * @str: char pointer
- * Return: void
- */
-void int_to_string(int number, char *str)
-{
-	unsigned int posValue;
-	char temp;
-	int length, j, i;
-
-	if (number < 0)
-	{
-		posValue = -(unsigned int)number;
-	}
-	else
-	{
-		posValue = (unsigned int)number;
-	}
-	i = 0;
-	do {
-		str[i++] = posValue % 10 + '0';
-		posValue /= 10;
-	} while (posValue != 0);
-	if (number < 0)
-	{
-		str[i++] = '-';
-	}
-	str[i] = '\0';
-	length = i;
-	for (j = 0; j < length / 2; j++)
-	{
-		temp = str[j];
-		str[j] = str[length - j - 1];
-		str[length - j - 1] = temp;
-	}
-}
 /**
  * w_double - calls w_double
- * @i: int
+ * @ap: va_list
  * @p: length
  * Return: void
  */
 
-void w_double(int i, int *p)
+int w_double(va_list ap, int *p)
 {
 	char *c;
+	int i;
 
-	c = malloc(10);
+	i = va_arg(ap, int);
+	if (i == 0)
+	{
+		_putchar('0');
+		*p = *p + 1;
+		return (0);
+	}
+	c = malloc(sizeof(int));
 
 	if (c)
 	{
@@ -61,4 +27,5 @@ void w_double(int i, int *p)
 		*p = *p + strlen(c);
 	}
 	free(c);
+	return (0);
 }
