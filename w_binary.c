@@ -11,7 +11,7 @@ int w_binary(va_list ap, int *p)
 {
 	int binary_num[32], i;
 	unsigned int n;
-	
+
 	i = 0;
 	n = va_arg(ap, unsigned int);
 
